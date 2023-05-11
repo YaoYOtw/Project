@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.Video;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(VideoPlayer))]
 public class Movie : MonoBehaviour
 {
+    public GameObject dialogBox;
+    public Text dialogBoxText;
+    public string signText;
+    private bool isPlayerInSign;
+
     bool open;
 
     Material mat;
@@ -37,6 +45,11 @@ public class Movie : MonoBehaviour
                 }
 
         }
+        if(isPlayerInSign)
+        {
+            dialogBoxText.text = signText;
+            dialogBox.SetActive(true);
+        }
 
         
     }
@@ -48,6 +61,8 @@ public class Movie : MonoBehaviour
             {
                 open = true;
                 Debug.Log("Playerenter");
+
+                isPlayerInSign = true;
                 
                
                 
@@ -61,6 +76,9 @@ public class Movie : MonoBehaviour
             {
                 open = false; 
                 Debug.Log("Playeexit");
+
+                isPlayerInSign = false;
+                dialogBox.SetActive(false);
 
                 
                 

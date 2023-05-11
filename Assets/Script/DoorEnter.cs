@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//附加音效播放器組件
+[RequireComponent(typeof(AudioSource))]
+
 public class DoorEnter : MonoBehaviour
 {
+    
+    
+
+    public AudioClip openAudio;//開啟音效
+    AudioSource source;
+
     public GameObject dialogBox;
     public Text dialogBoxText;
     public string signText;
@@ -18,6 +27,9 @@ public class DoorEnter : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        source = GetComponent<AudioSource>();
+        
+        
         
     }
 
@@ -31,6 +43,7 @@ public class DoorEnter : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
             playerTransform.position = backDoor.position;
+            source.PlayOneShot(openAudio);
             }
         }
 
