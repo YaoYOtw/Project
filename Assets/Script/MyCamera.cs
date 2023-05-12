@@ -35,7 +35,7 @@ public class MyCamera : MonoBehaviour
         var rotation = Quaternion.Euler(new Vector3(pos.y, pos.x, 0));
         //Position代表Camera的偏移量
         var position = rotation * new Vector3(0, 0, -pos.z);
-        pos.z = 3.0f;//調整視角遠度
+        pos.z = 4.0f;//調整視角遠度
         if (Physics.Raycast(point, position, out hit, pos.z + 0.1f, hitLayer))
             pos.z = Mathf.Clamp(hit.distance - 0.2f, 0.1f, 1.4f);
         Debug.DrawRay(point, rotation * new Vector3(0, 0, -pos.z - 0.1f), Color.green);
