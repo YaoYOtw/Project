@@ -8,6 +8,8 @@ public class BookDialog : MonoBehaviour
 
     
 
+    
+
     // Use this for initialization
     void Start()
     {
@@ -28,6 +30,7 @@ public class BookDialog : MonoBehaviour
             {
                 Debug.Log("Playerenter");
                 dialogUI.SetActive(true);
+               
                 
                 
             }
@@ -40,6 +43,7 @@ public class BookDialog : MonoBehaviour
             {
                 Debug.Log("Playeexit");
                 dialogUI.SetActive(false);
+               
             
             }
     }
