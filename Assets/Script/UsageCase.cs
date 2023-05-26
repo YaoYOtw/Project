@@ -52,7 +52,7 @@ public class UsageCase : MonoBehaviour
                     
                     break;
                 case 1:
-                    msgSys.SetDisplayVariable("MyName", myName);
+                    //msgSys.SetDisplayVariable("MyName", myName);
                     msgSys.ReadTextFromResource("Yao2");
                     
                    
